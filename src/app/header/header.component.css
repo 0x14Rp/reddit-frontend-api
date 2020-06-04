@@ -1,22 +1,24 @@
-header{
+header {
   border-radius: 1px solid;
 }
-.reddit-icon-svg{
+
+.reddit-icon-svg {
   height: 50px;
   padding: 8px 8px 8px 0;
   width: 50px;
 }
 
-.reddit-text{
+.reddit-text {
   font-weight: 700;
   height: 50px;
   width: 50px;
 }
-.logo{
+
+.logo {
   text-decoration: none;
 }
 
-.login, .signup{
+.login, .signup {
   background-color: transparent;
   border-color: #0079D3;
   color: #0079D3;
@@ -35,12 +37,13 @@ header{
   padding: 3px 16px;
   opacity: 1;
 }
-.signup{
+
+.signup {
   background-color: #0079D3;
   border-color: #0079D3;
   color: aliceblue;
 }
 
-.signup:hover{
+.signup:hover {
   opacity: 0.6;
 }
