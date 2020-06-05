@@ -26,7 +26,7 @@ export class AuthService {
         this.localStorage.store('authenticationToken', data.authenticationToken);
         this.localStorage.store('username', data.username);
         this.localStorage.store('refreshToken', data.refreshToken);
-        this.localStorage.store('expiresAt', data.expiresAt);
+        this.localStorage.store('expiresAt', data.expireAt);
         return true;
       }));
   }

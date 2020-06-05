@@ -7,7 +7,7 @@
           <h4>Login</h4>
         </div>
         <div class="card-body">
-          <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
             <div class="form-group row">
               <label for="user_name" class="col-md-4 col-form-label text-md-right">Username</label>
               <div class="col-md-6">

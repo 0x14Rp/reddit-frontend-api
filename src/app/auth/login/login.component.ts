@@ -14,6 +14,10 @@ export class LoginComponent implements OnInit {
   isError: boolean;
 
   constructor(private authService: AuthService) {
+    this.loginRequestPayload = {
+      username: '',
+      password: ''
+    };
   }
 
   ngOnInit() {
@@ -23,7 +27,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login() {
+  login(loginForm) {
     this.loginRequestPayload.username = this.loginForm.get('username').value;
     this.loginRequestPayload.password = this.loginForm.get('password').value;
 
