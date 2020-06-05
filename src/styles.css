@@ -1,7 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-input.ng-invalid.ng-touched{
+html{
+  padding: 0;
+  height: 100%;
+}
+body{
+  margin-top: 63px;
+  height: 100%;
+}
+
+input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
+
 .login,
 .sign-up {
   background-color: #0079D3;
