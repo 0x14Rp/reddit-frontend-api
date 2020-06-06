@@ -13,7 +13,7 @@
       <a class="postname" href="{{post.url}}">{{post.postName}}</a>
     </div>
     <div>
-      <p class="post-text">{{post.description}}</p>
+      <p class="post-text" [innerHtml]="post.description"></p>
     </div>
     <hr />
     <span>
