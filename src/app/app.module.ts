@@ -22,6 +22,7 @@ import { CreateSubredditComponent } from './subreddit/create-subreddit/create-su
 import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ListSubredditsComponent } from './subreddit/list-subreddits/list-subreddits.component';
 import {EditorModule} from "@tinymce/tinymce-angular";
+import { ViewPostComponent } from './post/view-post/view-post.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {EditorModule} from "@tinymce/tinymce-angular";
     CreateSubredditComponent,
     CreatePostComponent,
     ListSubredditsComponent,
+    ViewPostComponent,
 
   ],
   imports: [
