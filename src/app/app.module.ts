@@ -7,7 +7,6 @@ import {LoginComponent} from './auth/login/login.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {AuthModule} from "./auth/auth.module";
 import {NgxWebstorageModule} from "ngx-webstorage";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
@@ -23,44 +22,50 @@ import { CreatePostComponent } from './post/create-post/create-post.component';
 import { ListSubredditsComponent } from './subreddit/list-subreddits/list-subreddits.component';
 import {EditorModule} from "@tinymce/tinymce-angular";
 import { ViewPostComponent } from './post/view-post/view-post.component';
+import {UserProfileComponent} from "./auth/user-profile/user-profile.component";
+import {SignUpComponent} from "./auth/sign-up/sign-up.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    LoginComponent,
-    HomeComponent,
-    PostTitleComponent,
-    SideBarComponent,
-    SubredditSideBarComponent,
-    VoteButtonComponent,
-    CreateSubredditComponent,
-    CreatePostComponent,
-    ListSubredditsComponent,
-    ViewPostComponent,
+    declarations: [
+      AppComponent,
+      HeaderComponent,
+      SignUpComponent,
+      LoginComponent,
+      HomeComponent,
+      PostTitleComponent,
+      VoteButtonComponent,
+      SideBarComponent,
+      SubredditSideBarComponent,
+      CreateSubredditComponent,
+      CreatePostComponent,
+      ListSubredditsComponent,
+      ViewPostComponent,
+      UserProfileComponent
 
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AuthModule,
-    NgxWebstorageModule.forRoot(),
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),
-    FontAwesomeModule,
-    EditorModule
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    }
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgxWebstorageModule.forRoot(),
+        BrowserAnimationsModule,
+        ToastrModule.forRoot(),
+        FontAwesomeModule,
+        EditorModule
+    ],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: TokenInterceptor,
+            multi: true
+        }
 
-  ],
-  bootstrap: [AppComponent]
+    ],
+    exports: [
+        PostTitleComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
