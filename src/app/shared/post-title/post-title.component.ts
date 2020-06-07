@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class PostTitleComponent implements OnInit {
 
-  @Input() @Input() posts: PostModel[];
+  @Input() posts: PostModel[];
   faComments = faComments;
 
   constructor(private router: Router) {
