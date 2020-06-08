@@ -16,10 +16,10 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(public authService: AuthService) {
   }
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(req: HttpRequest<any>, next: HttpHandler):
+    Observable<HttpEvent<any>> {
 
-    if (req.url.indexOf('refresh') !== -1 || req.url.indexOf('login') !== -1 || (req.url.indexOf('/api/posts/') !== -1 && req.method.indexOf('GET') !== -1)
-      || (req.url.indexOf('/api/subreddit') !== -1 && req.method.indexOf('GET') !== -1)) {
+    if (req.url.indexOf('refresh') !== -1 || req.url.indexOf('login') !== -1) {
       return next.handle(req);
     }
     const jwtToken = this.authService.getJwtToken();
@@ -70,5 +70,6 @@ export class TokenInterceptor implements HttpInterceptor {
         'Bearer ' + jwtToken)
     });
   }
+
 
 }

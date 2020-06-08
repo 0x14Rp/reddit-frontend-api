@@ -24,6 +24,7 @@ import {EditorModule} from "@tinymce/tinymce-angular";
 import {ViewPostComponent} from './post/view-post/view-post.component';
 import {UserProfileComponent} from "./auth/user-profile/user-profile.component";
 import {SignUpComponent} from "./auth/sign-up/sign-up.component";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {SignUpComponent} from "./auth/sign-up/sign-up.component";
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FontAwesomeModule,
-    EditorModule
+    EditorModule,
+    NgbModule
   ],
   providers: [
     {
@@ -63,7 +65,7 @@ import {SignUpComponent} from "./auth/sign-up/sign-up.component";
 
   ],
   exports: [
-    PostTitleComponent
+
   ],
   bootstrap: [AppComponent]
 })
