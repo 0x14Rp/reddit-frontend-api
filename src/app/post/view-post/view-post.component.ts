@@ -6,6 +6,7 @@ import {throwError} from "rxjs";
 import {CommentService} from "../../comment/comment.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CommentPayload} from "../../comment/comment-payload";
+import {AuthService} from "../../auth/shared/auth.service";
 
 @Component({
   selector: 'app-view-post',
@@ -14,6 +15,7 @@ import {CommentPayload} from "../../comment/comment-payload";
 })
 export class ViewPostComponent implements OnInit {
 
+  userName: string;
   postId: number;
   post: PostModel;
   commentForm: FormGroup;
@@ -21,21 +23,27 @@ export class ViewPostComponent implements OnInit {
   comments: CommentPayload[];
 
   constructor(private postService: PostService, private activateRoute: ActivatedRoute,
-              private commentService: CommentService, private router: Router) {
+              private commentService: CommentService, private router: Router, private authService: AuthService) {
     this.postId = this.activateRoute.snapshot.params.id;
+
+    this.userName = this.authService.getUserName();
 
     this.commentForm = new FormGroup({
       text: new FormControl('', Validators.required)
     });
     this.commentPayload = {
       text: '',
-      postId: this.postId
+      postId: this.postId,
+      userName: this.userName
     };
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
     this.getPostById();
     this.getCommentsForPost();
+
+
   }
 
   postComment() {

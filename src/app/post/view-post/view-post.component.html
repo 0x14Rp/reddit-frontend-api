@@ -8,18 +8,18 @@
         </div>
         <div class="col-md-11">
           <span>
-            <span class="subreddit-text"><a class="post-url" href="">{{post.subredditName}}</a></span>
+            <span class="subreddit-text"><a class="post-url" href="">{{post?.subredditName}}</a></span>
             <span> . Posted
-              <span> {{post.duration}} </span>
+              <span> {{post?.duration}} </span>
               by
-              <a *ngIf="post.userName === null" class="username" href="">Anonymous</a>
-              <a *ngIf="post.userName != null" class="username" href="">{{post.userName}}</a>
+              <a *ngIf="post?.userName === null" class="username" href="">Anonymous</a>
+              <a *ngIf="post?.userName != null" class="username" href="">{{post?.userName}}</a>
             </span>
           </span>
           <hr />
-          <a routerLink="post.url" class="post-title">{{post.postName}}</a>
+          <a routerLink="post.url" class="post-title">{{post?.postName}}</a>
           <div>
-            <p class="post-text" [innerHtml]="post.description"></p>
+            <p class="post-text" [innerHtml]="post?.description"></p>
           </div>
           <div class="post-comment">
             <form [formGroup]="commentForm" (ngSubmit)="postComment()">
@@ -32,12 +32,12 @@
           <div style="margin-top: 60px;" *ngFor="let comment of comments">
             <div class="comment">
               <div class="username">
-                <a routerLink="/user/comment.username">{{comment.username}}</a>
+                <a routerLink="/user/comment.username">{{comment?.userName}}</a>
               </div>
               <div>
-                <p>{{comment.duration}}</p>
+                <p>{{comment?.duration}}</p>
               </div>
-              <b>{{comment.text}}</b>
+              <b>{{comment?.text}}</b>
             </div>
             <hr />
           </div>
