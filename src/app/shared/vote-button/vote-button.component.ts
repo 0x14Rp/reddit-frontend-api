@@ -23,7 +23,7 @@ export class VoteButtonComponent implements OnInit {
   upvoteColor: string;
   downvoteColor: string;
   isLoggedIn: boolean;
-
+  remove: string;
   constructor(private voteService: VotedService,
               private authService: AuthService,
               private postService: PostService, private toastr: ToastrService) {
