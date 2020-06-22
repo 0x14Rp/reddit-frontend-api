@@ -16,6 +16,7 @@ export class CreatePostComponent implements OnInit {
   createPostForm: FormGroup;
   postPayload: CreatePostPayload;
   subreddits: Array<any>;
+  downVoteTest:any;
 
   constructor(private router: Router, private postService: PostService,
               private subredditService: SubredditService) {
