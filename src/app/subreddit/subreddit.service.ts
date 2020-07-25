@@ -17,4 +17,6 @@ export class SubredditService {
     return this.http.post<SubredditModel>('http://localhost:8080/api/subreddit',
       subredditModel);
   }
+
+  testService(){}
 }
